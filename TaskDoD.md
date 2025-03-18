@@ -3,8 +3,32 @@
 Tài liệu này định nghĩa các yêu cầu (requirements) và tiêu chí hoàn thành (Definition of Done) cho từng task cụ thể trong dự án quản lý tài liệu. Các task được sắp xếp theo nguyên tắc INVEST và thứ tự ưu tiên phát triển.
 
 ## 1. Nền tảng cơ bản
+### Task 1.1: Tạo source code cơ bản
+**Requirements:**
+- Khởi tạo dự án NextJS 14 với TypeScript và TailwindCSS
+- Thiết lập cấu trúc dự án theo quy tắc file/folder
+- Cấu hình các công cụ phát triển (ESLint, Prettier, Husky)
+- Tích hợp các thư viện cần thiết (Zustand, Ant Design, React Query)
+- Thiết lập cấu trúc component cơ bản (layout, navigation)
+- Tạo các file utils chung và cấu hình HTTP client
+- Thiết lập giải pháp quản lý state và caching
+- Chuẩn bị môi trường phát triển và production
 
-### Task 1.1: Xây dựng hệ thống đăng ký/đăng nhập
+**Definition of Done:**
+- [ ] Dự án NextJS 14 được khởi tạo thành công với TypeScript và TailwindCSS
+- [ ] Cấu trúc thư mục tuân thủ chuẩn: `/app`, `/components`, `/lib`, `/types`, `/hooks`, v.v.
+- [ ] ESLint, Prettier được cấu hình với các rule phù hợp
+- [ ] Tích hợp Ant Design với theme mặc định và responsive
+- [ ] Zustand được thiết lập với các store cơ bản (auth, theme, layout)
+- [ ] HTTP client được cấu hình trong `utils/http.ts` với interceptors và xử lý lỗi
+- [ ] Layout cơ bản với header, sidebar và content area
+- [ ] Navigation system được thiết lập với các route cơ bản
+- [ ] Type definition cho các interface cơ bản của hệ thống
+- [ ] Môi trường dev hoạt động với hot reload
+- [ ] Unit test được thiết lập với Jest/Vitest
+- [ ] Documentation cơ bản về cấu trúc dự án và hướng dẫn phát triển
+
+### Task 1.2: Xây dựng hệ thống đăng ký/đăng nhập
 **Requirements:**
 - Tạo form đăng ký và đăng nhập người dùng
 - Triển khai xác thực email và chức năng quên mật khẩu
@@ -19,7 +43,7 @@ Tài liệu này định nghĩa các yêu cầu (requirements) và tiêu chí ho
 - [ ] Dữ liệu người dùng được lưu trữ trong localStorage/sessionStorage
 - [ ] Mockdata đủ phong phú để kiểm thử các trường hợp khác nhau
 
-### Task 1.2: Phát triển quản lý không gian làm việc
+### Task 1.3: Phát triển quản lý không gian làm việc
 **Requirements:**
 - Cho phép tạo, chỉnh sửa, xóa không gian làm việc
 - Tạo giao diện cài đặt và quản lý không gian làm việc
@@ -36,7 +60,7 @@ Tài liệu này định nghĩa các yêu cầu (requirements) và tiêu chí ho
 - [ ] Hoạt động gần đây hiển thị đúng từ mockdata
 - [ ] Mockdata đa dạng với các loại workspace và cấu trúc phân quyền
 
-### Task 1.3: Xây dựng giao diện xem tài liệu cơ bản
+### Task 1.4: Xây dựng giao diện xem tài liệu cơ bản
 **Requirements:**
 - Phát triển giao diện cho phép người dùng xem tài liệu với nhiều định dạng khác nhau
 - Tích hợp công cụ điều hướng và phóng to/thu nhỏ tài liệu
