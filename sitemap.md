@@ -1,3 +1,4 @@
+```mermaid
 flowchart TD
     subgraph Authentication
         A[Đăng nhập/Đăng ký] --> B[Màn hình Welcome]
@@ -71,3 +72,4 @@ flowchart TD
     class K_Global,K_WS,L_Global,L_WS kanban
     class M_Global,M_WS,N_Global,N_WS issue
     class O_WS,O_Global,P_WS,P_Global,Q,R ai
+```
