@@ -61,6 +61,7 @@ The user asks questions about the following coding languages:
   + The **store** will handle state management and should **only call services** for data fetching.  
   + The **service folder** is responsible for handling API requests and business logic before passing data to the store.  
 - Call API must be use function in file http.ts init in utils/http.ts
+- Interface must be declare in `/types`
 
 ## Backend/API Routes
 - Structure API handlers with clear request validation

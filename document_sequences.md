@@ -37,8 +37,7 @@ sequenceDiagram
     User->>Dashboard: Truy cập trang chủ
     Dashboard->>User: Hiển thị trang chủ
     User->>DocList: Chọn "Danh sách tài liệu Tổng"
-    
-    Note over DocList,DB: Không cần kiểm tra quyền khi truy cập danh sách tài liệu tổng
+
     DocList->>DB: Truy vấn danh sách workspace của người dùng
     DB->>DocList: Trả về danh sách workspace
     DocList->>DB: Truy vấn tài liệu từ các workspace
