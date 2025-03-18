@@ -1,0 +1,165 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Rules for AI-Generated NextJS Code (Client & Backend)
+
+## Source code
+- Source code must define in CONFLUENCE folder
+
+## Objective
+- Create a Next.js solution that is not only functional but also adheres to the best practices in performance, security, and maintainability.
+
+## Techstack version
+- Next.js 14
+- React 18.3
+- TypeScript 5
+- TailwindCSS 3.4
+- React Query
+
+## Coding Environment
+The user asks questions about the following coding languages:
+- NextJS
+- TypeScript
+- CSS
+- Postgres sql (don't use prisma)
+
+## Support Library
+- Ant design for Front End code 
+- Zustand 
+- Tailwind (don't use postcss)
+
+## Project Structure
+- Use the `/app` directory structure for Next.js 15+ projects
+- Organize routes with nested folders following Next.js routing patterns
+- Place reusable components in `/components` folder
+- Keep API routes in `/app/api` directory
+- Store global state management in `/lib/store` or `/context`
+- Separate utility functions in `/lib/utils`
+- Create custom hooks in `/hooks` directory
+- Place types and interfaces in `/types` or alongside components
+- Service call api in `app/service`
+
+## Client-Side Code
+- Differentiate between Server and Client Components ('use client' directive)
+- Implement proper data fetching strategies (SSR, SSG, ISR as appropriate)
+- Use React Server Components for data-fetching when possible
+- Apply responsive design using Tailwind or CSS modules
+- Implement proper client-side form validation
+- Use Next.js Image component for optimized image loading
+- Create reusable layout components
+- Employ Next.js Link component for client-side navigation
+- Use App router for router
+- Internationalization (i18n)
+  + Use react-native-i18n or expo-localization for internationalization and localization.
+  + Support multiple languages and RTL layouts.
+  + Ensure text scaling and font adjustments for accessibility.
+- Using skeleton for loading
+- API Call Rule**  
+  + All API calls **must be made from the service layer inside the store**.  
+  + The **store** will handle state management and should **only call services** for data fetching.  
+  + The **service folder** is responsible for handling API requests and business logic before passing data to the store.  
+- Call API must be use function in file http.ts init in utils/http.ts
+
+## Backend/API Routes
+- Structure API handlers with clear request validation
+- Implement proper error handling with appropriate status codes
+- Use middleware for common functionality (auth, logging)
+- Follow REST or GraphQL conventions consistently
+- Implement rate limiting for public endpoints
+- Return consistent response formats
+- Add proper CORS configuration
+- Implement proper authentication and session management
+- Using MVC Architecture
+
+
+## Error Handling and Validation
+- Use Zod for runtime validation and error handling.
+- Implement proper error logging using Sentry or a similar service.
+- Prioritize error handling and edge cases:
+  - Handle errors at the beginning of functions.
+  - Use early returns for error conditions to avoid deeply nested if statements.
+  - Avoid unnecessary else statements; use if-return pattern instead.
+  - Implement global error boundaries to catch and handle unexpected errors.
+- Use expo-error-reporter for logging and reporting errors in production.
+
+
+## Performance
+- Implement proper code-splitting and dynamic imports
+- Use next/font for optimized font loading
+- Apply image optimization strategies
+- Configure proper caching headers
+- Implement Suspense and streaming where appropriate
+- Load third-party scripts efficiently
+- Minimize bundle size by avoiding unnecessary dependencies
+- Use incremental static regeneration for dynamic content with good caching
+
+## State Management
+- Use zustand for global state when appropriate
+- Apply Zustand proper state management patterns
+- Implement server state management with tools like React Query or SWR
+- Handle loading and error states consistently
+- Apply optimistic UI updates where appropriate
+- Store form state properly with React Hook Form or similar
+
+## Security Rules
+- Enforce authentication for all sensitive API routes using JWT or NextAuth.js.  
+- Implement Role-Based Access Control (RBAC) or Attribute-Based Access Control (ABAC) for authorization.  
+- Restrict CORS settings to allow only trusted origins in production.  
+- Apply rate limiting to API endpoints to prevent DDoS attacks.  
+- Validate all user input using Zod or Yup to prevent SQL Injection and XSS attacks.  
+- Configure HTTP security headers such as `X-Frame-Options`, `Content-Security-Policy`, and `Strict-Transport-Security`.  
+- Use HttpOnly and Secure cookies instead of storing authentication tokens in Local Storage.  
+- Enable CSRF protection for critical API endpoints.  
+- Log and monitor API activity using services like Sentry or Logtail.  
+
+
+## Testing
+- Include Jest or Vitest configuration for unit tests
+- Add Cypress or Playwright for E2E testing
+- Test both client and API components
+- Mock external services in tests
+- Implement proper component testing with Testing Library
+- Include API response mocks for frontend tests
+
+## Data Fetching
+- Implement appropriate data fetching techniques based on requirements
+  - Server Components for static/dynamic data fetching
+  - Client Components with SWR/React Query for client-side data fetching
+- Use proper caching strategies
+- Handle loading, error, and empty states
+- Implement pagination or infinite scrolling appropriately
+
+## SEO & Metadata
+- Add proper metadata in layout.js or page.js files
+- Implement social media meta tags
+- Configure robots.txt and sitemap.xml
+- Use semantic HTML for content structure
+- Implement structured data for rich results
+
+## Deployment & Configuration
+- Organize environment variables properly
+- Create proper next.config.js with necessary configurations
+- Add appropriate security headers
+- Configure proper build and deployment scripts
+- Set up proper error boundaries
+- Implement analytics and monitoring
+
+## Code Quality
+- Follow TypeScript best practices with proper typing
+- Use ESLint with Next.js configuration
+- Apply Prettier for consistent formatting
+- Create reusable abstractions for common patterns
+- Include JSDoc comments for complex functions
+- Use tRPC for type-safe APIs if applicable
+- Clean all variable is assigned but nerver used
+- Fix all error in eslint
+- Do not make error type link 'Property 'userId' does not exist on type 'TaskComment'.ts(2339)'
+- Fix and do not make 'version' is of type 'unknown', check null when access variable
+- Always fix Linter Error 
+
+## Message
+- Message must define in constant message file
+
+

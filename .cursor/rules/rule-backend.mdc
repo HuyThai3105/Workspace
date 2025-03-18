@@ -1,0 +1,29 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Backend structure
+## router
+## Controller: `controllers/` (Controller Layer)**  
+- Handles request validation, calls service functions, and returns responses. 
+- Should not contain business logic, only processes inputs and outputs.  
+
+## `services/` (Service Layer)**  
+- Contains core business logic and interacts with the database via repositories.  
+- Decouples logic from controllers, making it reusable.  
+
+## **4. `repositories/` (Database Access Layer - Interface)**  
+- Abstracts database interactions.  
+- Ensures separation between business logic and data persistence.  
+
+## **5. `middlewares/` (Middleware Layer - Optional)**  
+- Used for authentication, authorization, request validation, or logging.  
+- Example: JWT authentication, rate limiting, or error handling.  
+
+## **6. `models/` (Database Models - Optional)**  
+- Defines database schemas if using an ORM .  
+- Ensures consistency in data structures.  
+
+## **7. response must be hanle and using same rule**
